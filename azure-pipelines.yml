@@ -10,13 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-
-- task: Maven@3
+- task: Bash@3
   inputs:
-    mavenPomFile: '$(System.DefaultWorkingDirectory)/kotlin/pom.kts'
-    publishJUnitResults: false
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+    targetType: 'inline'
+    script: '$(System.DefaultWorkingDirectory)/runAll.sh'
