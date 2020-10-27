@@ -23,3 +23,4 @@ steps:
   inputs:
     targetType: 'inline'
     script: 'cd kotlin && /usr/share/apache-maven-3.6.3/bin/mvn -f pom.kts package'
+  condition: succeededOrFailed()
