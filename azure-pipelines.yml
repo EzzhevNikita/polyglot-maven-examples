@@ -19,3 +19,7 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'cd kotlin && /usr/share/apache-maven-3.6.3/bin/mvn -f pom.kts package'
